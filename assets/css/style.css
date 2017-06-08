@@ -1,3 +1,87 @@
 .col-lg-4{
 	height: 400px;
 }
+
+body {
+	background-color: #948E99;
+    background-image:
+    linear-gradient(
+      to right, 
+      #948E99, #2E1437
+    );
+}
+
+header {
+	background-color: #948E99;
+    background-image:
+    linear-gradient(
+      to right, 
+      #948E99, #2E1437
+    );
+    height: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+	color: 5px solid transparent;
+
+	  -moz-border-image: -moz-linear-gradient(top, red 0%, yellow 100%);
+	  -webkit-border-image: -webkit-linear-gradient(top, red 0%, yellow 100%);
+	  border-image: linear-gradient(to bottom, red 0%, yellow 100%);
+	padding: 20px;
+	text-align: center;
+	font-size: 64px;
+	font-family: 'Mogra', cursive;
+	
+
+
+}
+
+
+button.gif {
+	background: red; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(red, yellow); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(red, yellow); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(red, yellow); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(red, yellow); /* Standard syntax */
+	margin-right: 5px;
+	margin-bottom: 5px;
+
+}
+
+div {
+	
+	
+	margin-right: 10px;
+	display: inline-block;
+
+	
+
+}
+
+img.gifImage {
+	width: 300px;
+	height: 300px;
+	border: 5px solid transparent;
+
+	  -moz-border-image: -moz-linear-gradient(top, red 0%, yellow 100%);
+	  -webkit-border-image: -webkit-linear-gradient(top, red 0%, yellow 100%);
+	  border-image: linear-gradient(to bottom, red 0%, yellow 100%);
+
+	  border-image-slice: 1;
+
+}
+
+.gifarea{
+	position: center;
+	margin-left: 150px;}
+
+p{ color: white;
+}
+
+#btn-area {
+	margin-left: 150px;
+}
+
+.input-group {
+	position: relative;
+	left: 200px;
+}

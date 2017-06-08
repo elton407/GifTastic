@@ -52,7 +52,7 @@ var showGif = function (){
     movingImgUrl = response['data'][i]['images']['fixed_height']['url'];
 
     var rating = response['data'][i]['rating'];
-    var newDiv = $('<div>');
+    var newDiv = $('<div id="imgdiv">');
     var newPara = $('<p>');
     var newGif = $('<img>');
 
