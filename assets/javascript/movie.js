@@ -70,8 +70,27 @@ var showGif = function (){
   });
 }
 
+var activateGif = function(){
+  gifCondition = $(this).data("type");
+  frozenUrl = $(this).data("still");
+  movingUrl = $(this).data("animate");
+
+  if (gifCondition === "still") {
+    $(this).attr("src", movingUrl);
+    $(this).data("type", "animate");
+
+  } else if (gifCondition === 'animate') {
+    $(this).attr('src', frozenUrl);
+            //Switch the data-type to still
+    $(this).data('type', 'still');
+            //Testing
+            console.log(gifCondition);
+  }
+}
+
 makeButton();
 submit();
 $(document).on('click', '.gif', showGif);
+$(document).on('click', '.gifImage', activateGif);
 
 });
