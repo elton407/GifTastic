@@ -1,0 +1,77 @@
+$(document).ready(function() {
+
+  //global variables
+
+var topics = ["Family Guy", "Dragon Ball Z", "Pokemon", "Naruto", "Simpsons", "Luke Cage", "The Boondocks", "Friends", "Rules of Engagement", "CSI Miami", "Shark Tank"];
+var frozenImgUrl = '';
+var movingImgUrl = '';
+var gifCondition = '';
+var frozenUrl = '';
+var movingUrl = '';
+
+
+var makeButton = function (){
+  $('#btn-area').empty();
+  for (var i = 0; i < topics.length; i++) {
+    //This function will turn items in topic array into buttons.
+    var newButton = $("<button>");
+    newButton.attr("data-name", topics[i]);
+    newButton.attr("class", "gif");
+    newButton.text(topics[i]);
+    $("#btn-area").append(newButton);
+    console.log(newButton);
+  }
+}
+
+var submit = function() {
+  $('#submit-btn').on('click', function(event) {
+    event.preventDefault();
+    var inputVal = $('#userInput').val();
+    topics.push(inputVal);
+    makeButton();
+   console.log(inputVal);
+   console.log(topics);
+        });
+    }
+
+
+var showGif = function (){
+  var btnVal = $(this).data("name");
+  var gifKey = "dc6zaTOxFJmzC";
+  var gifUrl = "https://api.giphy.com/v1/gifs/search?q=" + btnVal + "&api_key=" + gifKey;
+
+  $.ajax({
+  url: gifUrl,
+  method: 'GET'
+  }).done(function(response) {
+
+  $(".gifarea").empty();
+
+  for (var i = 0; i < topics.length; i++) {
+    frozenImgUrl = response['data'][i]['images']['fixed_height_still']['url'];
+    movingImgUrl = response['data'][i]['images']['fixed_height']['url'];
+
+    var rating = response['data'][i]['rating'];
+    var newDiv = $('<div>');
+    var newPara = $('<p>');
+    var newGif = $('<img>');
+
+    newGif.attr("data-still", frozenImgUrl);
+    newGif.attr("data-animate", movingImgUrl);
+    newGif.attr("src", frozenImgUrl);
+    newGif.attr("data-type", "still");
+    newGif.addClass("gifImage");
+    newPara.html('Rating: ' + rating);
+    $(newPara).appendTo(newDiv);
+    $(newGif).appendTo(newDiv);
+    $(".gifarea").append(newDiv);
+  }
+
+  });
+}
+
+makeButton();
+submit();
+$(document).on('click', '.gif', showGif);
+
+});
