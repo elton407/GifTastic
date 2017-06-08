@@ -21,15 +21,14 @@ header {
     height: 100px;
     margin-top: 20px;
     margin-bottom: 20px;
-	color: 5px solid transparent;
-
-	  -moz-border-image: -moz-linear-gradient(top, red 0%, yellow 100%);
-	  -webkit-border-image: -webkit-linear-gradient(top, red 0%, yellow 100%);
-	  border-image: linear-gradient(to bottom, red 0%, yellow 100%);
+	color: white;
 	padding: 20px;
 	text-align: center;
 	font-size: 64px;
 	font-family: 'Mogra', cursive;
+	  background: -webkit-linear-gradient(red, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 	
 
 
