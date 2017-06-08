@@ -69,6 +69,12 @@ img.gifImage {
 
 }
 
+img:hover {
+	width: 350px;
+	height: 350px;
+	cursor: pointer;
+}
+
 .gifarea{
 	position: center;
 	margin-left: 150px;}
